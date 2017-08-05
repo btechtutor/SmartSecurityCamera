@@ -1,5 +1,3 @@
-#https://software.intel.com/en-us/articles/opencv-at-the-edge-counting-people
-
 #!/usr/bin/env python
 from SmartCamera import SmartCamera
 import cv2
@@ -18,9 +16,11 @@ def gen(sc):
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
         time.sleep(0.1)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/video_feed')
 def video_feed():
@@ -28,6 +28,7 @@ def video_feed():
 
     return Response(gen(SmartCamera().start()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
