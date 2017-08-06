@@ -1,9 +1,8 @@
 #!/usr/bin/env python
-from SmartCamera import SmartCamera
 import cv2
 import time
-
 from flask import Flask, render_template, Response
+from SmartCamera import SmartCamera
 
 app = Flask(__name__)
 
