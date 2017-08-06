@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-import cv2
 import time
-from flask import Flask, render_template, Response
+
+import cv2 # OpenCV
+from flask import Flask, render_template, Response # Flash web framework
 from SmartCamera import SmartCamera
 
 app = Flask(__name__)

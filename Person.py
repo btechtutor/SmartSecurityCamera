@@ -1,3 +1,5 @@
+# Person class
+# every person has an ID and a position
 class Person:
     def __init__(self, id, x, y):
         self.id = id
@@ -12,7 +14,7 @@ class Person:
 
     def getY(self):
         return self.y
-    
+
     def updateCoords(self, newX, newY):
         self.x = newX
         self.y = newY
