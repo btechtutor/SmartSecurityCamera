@@ -7,14 +7,15 @@ from SmartCamera import SmartCamera
 
 app = Flask(__name__)
 
+
 def gen(sc):
     count = 1
     while True:
-        frame = sc.getFrameWidthDetections()
+        frame = sc.getFrameWithDetections()
         count = count+1
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-        time.sleep(0.1)
+        time.sleep(0.07)
 
 
 @app.route('/')
@@ -31,4 +32,4 @@ def video_feed():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')
